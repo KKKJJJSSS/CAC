@@ -1,8 +1,43 @@
-.container {
-    margin-top: 65px;
+a {
+    text-decoration: none!important;;
 }
 
 .search {
-    margin: auto;
-    width: 60%;
+    width: 30%;
+    float: right;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon-link .bi {
+    fill: black!important;
+}
+
+.list-group {
+    margin-top: 1rem;
+}
+
+.row {
+    height: 700px;
+}
+
+.list-group-item {
+    border: none!important;
+}
+
+.card {
+    width: 70%;
+    margin: 3rem auto auto;
+}
+
+.card-content {
+    width: 90%;
+    height: 70%;
+    margin: auto!important;
+    margin-top: 1rem!important;
+    margin-bottom: 2rem!important;
+}
+
+.upload-btn {
+    margin-top: 2rem!important;
 }

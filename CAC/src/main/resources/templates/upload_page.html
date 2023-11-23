@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css"/>
+    <title>CAC</title>
+</head>
+<header>
+    <div th:replace="./nav.html"></div>
+</header>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="./sidebar.html"></div>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="card">
+                <form class="row g-3 card-content" id="form">
+                    <div class="col-md-6">
+                        <label class="form-label" for="title">건물명</label>
+                        <input class="form-control" id="title" type="text" placeholder="ex) 웨딩스퀘어 강남점">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="location">주소</label>
+                        <input class="form-control" id="location" type="text" placeholder="ex) 서울특별시 강남구">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="age">본인 나이</label>
+                        <input class="form-control" id="age" type="number" placeholder="ex) 20">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="relationship">관계</label>
+                        <input class="form-control" id="relationship" type="text" placeholder="ex) 친구">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="money_spent">나간 돈</label>
+                        <input class="form-control" id="money_spent" type="number" placeholder="ex) 100000">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="received_money">받은 돈</label>
+                        <input class="form-control" id="received_money" type="number" placeholder="ex) 100000">
+                    </div>
+                    <div class="col-12 upload-btn">
+                        <button class="btn btn-success" type="submit">등록</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
