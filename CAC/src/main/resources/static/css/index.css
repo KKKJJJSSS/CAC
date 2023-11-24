@@ -2,11 +2,24 @@ a {
     text-decoration: none!important;;
 }
 
+h1 {
+    margin: auto;
+    margin-top: 2rem!important;
+}
+
 .search {
     width: 30%;
     float: right;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.table {
+    margin-bottom: 2rem!important;
+}
+
+.upload-btn {
+    text-align: center;
 }
 
 .icon-link .bi {
@@ -28,6 +41,7 @@ a {
 .card {
     width: 70%;
     margin: 3rem auto auto;
+    margin-top: 6rem!important;
 }
 
 .card-content {

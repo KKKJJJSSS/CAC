@@ -40,6 +40,7 @@
                     <td th:text="${user.money_spent}">1</td>
                     <td th:text="${user.received_money}">2</td>
                     <td th:text="${user.create_date}">3</td>
+                    <td><a th:href="@{/board/delete(id=${user.id})}">삭제</a></td>
                 </tr>
                 </tbody>
             </table>

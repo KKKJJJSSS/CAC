@@ -9,4 +9,9 @@ public class MainController {
     public String post() {
         return "upload_page";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

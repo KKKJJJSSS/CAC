@@ -1,6 +1,7 @@
 package com.example.CAC.service;
 
 import com.example.CAC.entity.Cac;
+import com.example.CAC.entity.User;
 import com.example.CAC.entity.CacRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -27,5 +28,13 @@ public class CacService {
         }
 
         return this.cacRepository.findByTitleContaining(keyword, pageable);
+    }
+
+    public Cac write(Cac cac){
+        return cacRepository.save(cac);
+    }
+
+    public void boardDelete(Long id){
+        cacRepository.deleteById(id);
     }
 }

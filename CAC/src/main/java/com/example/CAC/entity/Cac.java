@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
+@NoArgsConstructor
 @Data
 @Entity
 public class Cac {
