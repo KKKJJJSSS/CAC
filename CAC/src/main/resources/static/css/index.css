@@ -8,7 +8,7 @@ h1 {
 }
 
 .form {
-    height: 15%!important;
+    height: 10%!important;
 }
 
 .search {
@@ -35,8 +35,8 @@ h1 {
 }
 
 .row {
-    height: 700px;
-}
+    height: 1000px;
+}l
 
 .list-group-item {
     border: none!important;
