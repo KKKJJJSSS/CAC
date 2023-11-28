@@ -32,11 +32,11 @@
         <svg aria-hidden="true" class="bi">
           <use xlink:href="#file-earmark-text"></use>
         </svg>
-        Uplaod
+        Upload
       </a>
     </li>
     <hr>
-    <li class="list-group-item">
+    <li class="list-group-item" th:if="${user_id == null}">
       <a class="icon-link" href="/login">
         <svg aria-hidden="true" class="bi">
           <use xlink:href="#door-open"></use>
@@ -44,8 +44,8 @@
         Login
       </a>
     </li>
-    <li class="list-group-item">
-      <a class="icon-link" href="/new-post">
+    <li class="list-group-item" th:if="${user_id != null}">
+      <a class="icon-link" th:href="@{|${kakaoLogoutUrl}|}">
         <svg aria-hidden="true" class="bi">
           <use xlink:href="#door-closed"></use>
         </svg>

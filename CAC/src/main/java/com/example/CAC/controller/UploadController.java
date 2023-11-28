@@ -11,11 +11,11 @@ import org.springframework.web.servlet.view.RedirectView;
 @RestController
 @RequestMapping("/api")
 public class UploadController {
-    private final CacService boardService;
+    private final CacService cacService;
 
     @PostMapping("/board")
     public RedirectView write(Cac cac) {
-        boardService.write(cac);
+        cacService.write(cac);
 
         return new RedirectView("/");
     }

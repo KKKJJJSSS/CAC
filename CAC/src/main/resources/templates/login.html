@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="kr" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8">
-  <link href="../static/css/index.css" rel="stylesheet" type="text/css"/>
-  <title>CAC</title>
+    <meta charset="utf-8">
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css"/>
+    <title>CAC</title>
 </head>
 <header>
-  <div th:replace="./nav.html"></div>
+    <div th:replace="./nav.html"></div>
 </header>
 <body>
 <div class="container-fluid">
-  <div class="row">
-    <div th:replace="./sidebar.html"></div>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="card" style="width: 40%!important;">
-        <h1>ID로그인</h1>
-        <form class="row g-3 card-content" action="/check/login" method="get" name="login" onsubmit="return login_form_check();">
-          <div class="col-md-12">
-            <input class="form-control" id="username" name="username" type="text" placeholder="아이디">
-          </div>
-          <div class="col-md-12">
-            <input class="form-control" id="password" name="password" type="password" placeholder="비밀번호">
-          </div>
-          <div class="col-12 upload-btn">
-            <button class="btn btn-success" type="submit">로그인</button>
-          </div>
-        </form>
-      </div>
-    </main>
-  </div>
+    <div class="row">
+        <div th:replace="./sidebar.html"></div>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="card" style="width: 40%!important;">
+                <div class="col-12 upload-btn">
+                    <a th:href="@{|${kakaoUrl}|}">
+                        <img src="../static/image/kakao_login.png">
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
 <script src="../static/js/form_check.js"></script>
 </body>

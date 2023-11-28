@@ -19,7 +19,8 @@ public class Cac {
     private String location;
     private int age;
     private String relationship;
-    private int money_spent;
-    private int received_money;
+    private int money;
+    private String money_type;
     private LocalDate create_date;
+    private Long kakao_id;
 }

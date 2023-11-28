@@ -1,28 +1,26 @@
 package com.example.CAC.controller;
 
-import com.example.CAC.entity.User;
-import com.example.CAC.service.LoginService;
+import com.example.CAC.service.KakaoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
+
 
 @RequiredArgsConstructor
 @Controller
 public class LoginController {
-    private final LoginService loginService;
 
-    @GetMapping("/check/login")
-    public String list(String username, String password) {
-        List<User> content = loginService.checkLogin(username, password);
+    private final KakaoService kakaoService;
 
-        if (content != null) {
-            System.out.println("fail");
-        } else {
-            System.out.println("success");
-        }
+    @RequestMapping(value="/login", method= RequestMethod.GET)
+    public String login(Model model, HttpSession session) {
+        model.addAttribute("kakaoUrl", kakaoService.getKakaoLogin());
+        model.addAttribute("kakaoLogoutUrl", kakaoService.getKakaoLogout());
+        model.addAttribute("user_id", session.getAttribute("user_id"));
 
-        return "upload_page";
+        return "login";
     }
 }

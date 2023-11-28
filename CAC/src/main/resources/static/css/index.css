@@ -8,14 +8,14 @@ h1 {
 }
 
 .search {
-    width: 30%;
+    width: 60%;
     float: right;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .table {
-    margin-bottom: 2rem!important;
+    margin-bottom: 3rem!important;
 }
 
 .upload-btn {
@@ -41,7 +41,7 @@ h1 {
 .card {
     width: 70%;
     margin: 3rem auto auto;
-    margin-top: 6rem!important;
+    margin-top: 13rem!important;
 }
 
 .card-content {
@@ -54,4 +54,10 @@ h1 {
 
 .upload-btn {
     margin-top: 2rem!important;
+    margin-bottom: 2rem!important;
+}
+
+.toast {
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
 }
