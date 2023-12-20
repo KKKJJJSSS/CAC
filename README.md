@@ -4,7 +4,7 @@
 
 
 - 검색 처리 후 메인 페이지
-<p align="center"><img width="700" alt="캡처" src="https://github.com/KKKJJJSSS/CAC/assets/118191869/2ac19853-5c56-45df-bd9c-49c27ba163d2"></p>
+<p align="center"><img width="700" alt="캡처" src="https://github.com/KKKJJJSSS/CAC/assets/118191869/f159d2a4-e496-4217-a87a-7239b4e74f00"></p>
 
 
 - 경조사비 등록 페이지
