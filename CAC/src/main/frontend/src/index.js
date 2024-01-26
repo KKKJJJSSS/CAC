@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import App2 from './hello2';
+import Update from './update';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <App/>
-        <App2/>
+        <Update/>
     </React.StrictMode>,
 );
 
