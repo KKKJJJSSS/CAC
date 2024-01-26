@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
-function update() {
+function Update() {
     const [update, setUpdate] = useState('')
 
     useEffect(() => {
@@ -17,4 +17,4 @@ function update() {
     );
 }
 
-export default update;
+export default Update;
