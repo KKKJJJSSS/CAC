@@ -10,7 +10,8 @@ import javax.servlet.http.HttpSession;
 
 
 @RequiredArgsConstructor
-@Controller
+@RestController
+@RequestMapping("/api")
 public class LoginController {
 
     private final KakaoService kakaoService;

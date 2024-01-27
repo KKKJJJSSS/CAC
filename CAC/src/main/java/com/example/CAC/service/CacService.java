@@ -33,7 +33,7 @@ public class CacService {
         return this.cacRepository.findByTitleContaining(keyword, pageable);
     }
 
-    public List<Cac> getAvg(String keyword) {
+    public List<Cac> getSearchList(String keyword) {
         return cacRepository.findByTitleContaining(keyword);
     }
 
@@ -42,7 +42,13 @@ public class CacService {
     }
 
     public String boardDelete(Long id, HttpSession session) {
-        String userId = String.valueOf(session.getAttribute("user_id"));
+
+        String userId = "";
+        Object userIdObj = session.getAttribute("user_id");
+        if (userIdObj != null) {
+            userId = String.valueOf(userIdObj);
+        }
+
         Optional<Cac> cacOptional = cacRepository.findById(id);
 
         if (cacOptional.isPresent()) {
@@ -51,14 +57,11 @@ public class CacService {
 
             if (kakaoId.equals(userId)) {
                 cacRepository.deleteById(id);
-                System.out.println("삭제 되었습니다.");
                 return "success";
             } else {
-                System.out.println("권한이 없습니다.");
                 return "fail";
             }
         } else {
-            System.out.println("no entity");
             return "error";
         }
     }

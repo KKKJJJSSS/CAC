@@ -7,10 +7,6 @@ h1 {
     margin-top: 2rem!important;
 }
 
-.form {
-    height: 10%!important;
-}
-
 .search {
     width: 60%;
     float: right;
@@ -20,6 +16,12 @@ h1 {
 
 .table {
     margin-bottom: 3rem!important;
+}
+
+.delete-btn {
+    border: 0;
+    background-color: transparent;
+    color: blue;
 }
 
 .upload-btn {
@@ -34,9 +36,9 @@ h1 {
     margin-top: 1rem;
 }
 
-.row {
+.sidebar {
     height: 1000px;
-}l
+}
 
 .list-group-item {
     border: none!important;
