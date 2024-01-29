@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @NoArgsConstructor
 @Data
@@ -21,6 +20,6 @@ public class Cac {
     private String relationship;
     private int money;
     private String money_type;
-    private LocalDate create_date;
+    private String create_date;
     private Long kakao_id;
 }

@@ -43,11 +43,7 @@ public class CacService {
 
     public String boardDelete(Long id, HttpSession session) {
 
-        String userId = "";
-        Object userIdObj = session.getAttribute("user_id");
-        if (userIdObj != null) {
-            userId = String.valueOf(userIdObj);
-        }
+        String userId = getSessionId(session);
 
         Optional<Cac> cacOptional = cacRepository.findById(id);
 
@@ -64,5 +60,16 @@ public class CacService {
         } else {
             return "error";
         }
+    }
+
+    public String getSessionId(HttpSession session) {
+
+        String userId = "";
+        Object userIdObj = session.getAttribute("user_id");
+        if (userIdObj != null) {
+            userId = String.valueOf(userIdObj);
+        }
+
+        return userId;
     }
 }

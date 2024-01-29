@@ -4,25 +4,25 @@ import com.example.CAC.service.CacService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.Map;
+
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("api")
+@RequestMapping("/api")
 public class DeleteController {
     private final CacService cacService;
 
     @PostMapping("/table/delete")
-    public ResponseEntity<?> boardDelete(Long id, HttpSession session) {
-        if (id == null) {
-            id = 0L;
-        }
+    public ResponseEntity<?> deleteTable(@RequestBody Map<String, Object> request, HttpSession session) {
+        Long table_id = Long.valueOf(request.get("id").toString());
 
-        String result = cacService.boardDelete(id, session);
+        String result = cacService.boardDelete(table_id, session);
         if (result.equals("success")) {
             return ResponseEntity.ok("삭제 되었습니다.");
         } else {

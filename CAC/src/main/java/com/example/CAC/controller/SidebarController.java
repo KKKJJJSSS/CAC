@@ -19,7 +19,7 @@ public class SidebarController {
     private final KakaoService kakaoService;
 
     @GetMapping("/sidebar")
-    public ResponseEntity<?> post(HttpSession session) {
+    public ResponseEntity<?> getSidebarData(HttpSession session) {
 
         Map<String, Object> responseData = new HashMap<>();
         responseData.put("user_id", session.getAttribute("user_id"));

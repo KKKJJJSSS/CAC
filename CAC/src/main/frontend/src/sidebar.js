@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 function Sidebar() {
     const [user_id, setUserId] = useState('');
@@ -15,39 +16,43 @@ function Sidebar() {
             .catch(error => console.log(error));
     }, []);
 
+    const handleLogout = () => {
+        window.location.replace(kakaoLogoutUrl);
+    }
+
     return (
         <div className="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
             <ul className="list-group list-group-flush">
                 <li className="list-group-item">
-                    <a className="icon-link" href="/">
+                    <Link to={"/"} className="icon-link">
                         <svg aria-hidden="true" className="bi">
                             <use xlinkHref="#house-fill"></use>
                         </svg>
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li className="list-group-item">
-                    <a className="icon-link" href="/new-post">
+                    <Link to={"/upload_board"} className="icon-link">
                         <svg aria-hidden="true" className="bi">
                             <use xlinkHref="#file-earmark-text"></use>
                         </svg>
                         Upload
-                    </a>
+                    </Link>
                 </li>
                 <hr></hr>
                 {user_id === null && (
                     <li className="list-group-item">
-                        <a className="icon-link" href="/login">
+                        <Link to={"/login"} className="icon-link">
                             <svg aria-hidden="true" className="bi">
                                 <use xlinkHref="#door-open"></use>
                             </svg>
                             Login
-                        </a>
+                        </Link>
                     </li>
                 )}
                 {user_id !== null && (
                     <li className="list-group-item">
-                        <a className="icon-link" href={kakaoLogoutUrl}>
+                        <a onClick={handleLogout} className="icon-link">
                             <svg aria-hidden="true" className="bi">
                                 <use xlinkHref="#door-closed"></use>
                             </svg>

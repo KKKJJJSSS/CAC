@@ -9,6 +9,10 @@ function Table() {
     const [totalPages, setTotalPages] = useState(0);
     const pageSize = 15;
 
+    const handleSearch = (event) => {
+        event.preventDefault();
+    };
+
     useEffect(() => {
         fetchData();
     }, [pageNumber, keyword]);
@@ -24,19 +28,13 @@ function Table() {
             .catch(error => console.log(error));
     };
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        setPageNumber(0);
-        fetchData();
-    };
-
     const handlePageChange = (page) => {
         setPageNumber(page);
         fetchData();
     };
 
     const handleDelete = (id) => {
-        axios.post('/api/table/delete', { id })
+        axios.post('/api/table/delete', {id})
             .then((response) => {
                 if (response.status === 200) {
                     alert("삭제 되었습니다.");
@@ -51,25 +49,14 @@ function Table() {
 
     return (
         <main className="data-list col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div className="row form">
-                <div className="col">
-                    <div aria-atomic="true" aria-live="assertive" className="toast" role="alert">
-                        <div className="toast-header">
-                            <img className="rounded me-2" alt="avatar"/>
-                            <strong className="me-auto">추천금액</strong>
-                            <button aria-label="Close" className="btn-close" data-bs-dismiss="toast"
-                                    type="button"></button>
-                        </div>
-                        <div className="toast-body">
-                            {averageMoney}
-                        </div>
-                    </div>
+            <div className="row">
+                <div className="col avg">
+                        <p>추천 금액 : {averageMoney}</p>
                 </div>
                 <div className="col">
                     <form className="d-flex search" onSubmit={handleSearch}>
                         <input className="form-control me-2" id="search" name="keyword" placeholder="Search" type="text"
                                value={keyword} onChange={(e) => setKeyword(e.target.value)}/>
-                        <button className="btn btn-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>

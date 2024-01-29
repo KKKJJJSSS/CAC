@@ -21,10 +21,23 @@ import java.util.Map;
 public class UploadController {
     private final CacService cacService;
 
-    @PostMapping("/board")
-    public RedirectView write(Cac cac) {
+    @PostMapping("/new-table")
+    public ResponseEntity<?> write(Cac cac) {
         cacService.write(cac);
 
-        return new RedirectView("/");
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/id-check")
+    public ResponseEntity<?> getSessionId(HttpSession session) {
+        String sessionId = cacService.getSessionId(session);
+
+        if (sessionId == null) {
+            ResponseEntity.badRequest();
+        }
+        Map<String, Object> responseData = new HashMap<>();
+        responseData.put("kakao_id", sessionId);
+
+        return ResponseEntity.ok(responseData);
     }
 }
