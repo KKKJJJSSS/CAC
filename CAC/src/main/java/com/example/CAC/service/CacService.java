@@ -1,7 +1,7 @@
 package com.example.CAC.service;
 
 import com.example.CAC.entity.Cac;
-import com.example.CAC.entity.CacRepository;
+import com.example.CAC.repository.CacRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

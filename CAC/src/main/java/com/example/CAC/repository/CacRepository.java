@@ -1,5 +1,6 @@
-package com.example.CAC.entity;
+package com.example.CAC.repository;
 
+import com.example.CAC.entity.Cac;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
