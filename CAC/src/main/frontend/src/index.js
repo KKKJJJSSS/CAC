@@ -19,7 +19,7 @@ root.render(
             <Nav/>
             <div style={{display: 'flex'}}>
                 <Routes>
-                    <Route path="/" element={<>
+                    <Route path="*" element={<>
                         <Sidebar />
                         <Table />
                     </>} />
