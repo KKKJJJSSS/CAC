@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 function Sidebar() {
     const [user_id, setUserId] = useState('');
     const [kakaoLogoutUrl, setKakaoLogoutUrl] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('/api/sidebar')
@@ -15,6 +16,11 @@ function Sidebar() {
             })
             .catch(error => console.log(error));
     }, []);
+
+
+    const click = (e)=>{
+        navigate("/login");
+    };
 
     return (
         <div className="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
@@ -38,12 +44,13 @@ function Sidebar() {
                 <hr></hr>
                 {user_id === null && (
                     <li className="list-group-item">
-                        <Link to={"/login"} className="icon-link">
-                            <svg aria-hidden="true" className="bi">
-                                <use xlinkHref="#door-open"></use>
-                            </svg>
-                            Login
-                        </Link>
+                        {/*<Link to={"/login"} className="icon-link">*/}
+                        {/*    <svg aria-hidden="true" className="bi">*/}
+                        {/*        <use xlinkHref="#door-open"></use>*/}
+                        {/*    </svg>*/}
+                        {/*    Login*/}
+                        {/*</Link>*/}
+                        <button onClick={click}>login</button>
                     </li>
                 )}
                 {user_id !== null && (
