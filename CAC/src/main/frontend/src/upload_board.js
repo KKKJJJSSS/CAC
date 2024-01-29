@@ -11,7 +11,7 @@ function UploadBoard() {
     useEffect(() => {
         axios.get('/api/id-check')
             .then(response => {
-                if (response.status !== 200) {
+                if (response.data.kakao_id === null) {
                     navigate("/login");
                 } else {
                     setKakaoId(response.data.kakao_id);
