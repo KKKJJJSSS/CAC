@@ -19,18 +19,18 @@ public class KakaoController {
     private final KakaoService kakaoService;
 
     @GetMapping("/kakao/callback")
-    public String callback(HttpServletRequest request, HttpSession session) throws Exception {
+    public ResponseEntity<?> callback(HttpServletRequest request, HttpSession session) throws Exception {
         KakaoDTO kakaoInfo = kakaoService.getKakaoInfo(request.getParameter("code"));
         Long user_id = kakaoInfo.getId();
         session.setAttribute("user_id", user_id);
 
-        return "index.html";
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/kakao/reset-session")
-    public String resetSession(HttpSession session) {
+    public ResponseEntity<?> resetSession(HttpSession session) {
         session.invalidate();
 
-        return "index.html";
+        return ResponseEntity.ok().build();
     }
 }
