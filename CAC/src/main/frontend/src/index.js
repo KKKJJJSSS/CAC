@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "./index.css";
 
@@ -15,7 +15,7 @@ import Upload_board from "./upload_board";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <HashRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Nav/>
             <div style={{display: 'flex'}}>
                 <Routes>
@@ -35,7 +35,7 @@ root.render(
                     <Route path="/kakao/reset-session" element={<Redirection_kakaologout />} />
                 </Routes>
             </div>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
 );
 

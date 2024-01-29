@@ -17,6 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://localhost:8080",
+  "homepage": "https://coandco.site",
   "scripts": {
     "start": "react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
