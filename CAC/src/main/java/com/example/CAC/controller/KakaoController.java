@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("kakao")
+@RequestMapping("/api")
 public class KakaoController {
 
     private final KakaoService kakaoService;
 
-    @GetMapping("/callback")
+    @GetMapping("/kakao/callback")
     public ResponseEntity<?> callback(HttpServletRequest request, HttpSession session) throws Exception {
         KakaoDTO kakaoInfo = kakaoService.getKakaoInfo(request.getParameter("code"));
         Long user_id = kakaoInfo.getId();
@@ -28,7 +28,7 @@ public class KakaoController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/reset-session")
+    @GetMapping("/kakao/reset-session")
     public ResponseEntity<?> resetSession(HttpSession session) {
         session.invalidate();
 

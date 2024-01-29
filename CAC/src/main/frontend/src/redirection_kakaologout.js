@@ -7,7 +7,7 @@ function Redirection_kakaologout() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/kakao/reset-session')
+        axios.get('/api/kakao/reset-session')
             .then(response => {
                 if (response.status === 200) {
                     navigate('/');
