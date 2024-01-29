@@ -18,7 +18,7 @@ function Sidebar() {
     }, []);
 
 
-    const click = (e)=>{
+    const click = ()=>{
         navigate("/login");
     };
 
