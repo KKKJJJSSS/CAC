@@ -28,9 +28,9 @@ public class KakaoController {
     }
 
     @GetMapping("/kakao/reset-session")
-    public ResponseEntity<?> resetSession(HttpSession session) {
+    public String resetSession(HttpSession session) {
         session.invalidate();
 
-        return ResponseEntity.ok().build();
+        return "index.html";
     }
 }
