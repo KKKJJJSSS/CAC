@@ -64,7 +64,7 @@ public class CacService {
 
     public String getSessionId(HttpSession session) {
 
-        String userId = "";
+        String userId = null;
         Object userIdObj = session.getAttribute("user_id");
         if (userIdObj != null) {
             userId = String.valueOf(userIdObj);
