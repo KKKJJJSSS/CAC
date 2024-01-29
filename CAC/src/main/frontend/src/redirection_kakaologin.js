@@ -11,7 +11,7 @@ function Redirection_kakaologin() {
 
     useEffect(() => {
         if (code) {
-            axios.get('/kakao/callback', {
+            axios.get('/api/kakao/callback', {
                 params: {
                     code: code
                 }
