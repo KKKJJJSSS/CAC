@@ -20,12 +20,12 @@ public class KakaoController {
     private final KakaoService kakaoService;
 
     @GetMapping("/kakao/callback")
-    public ResponseEntity<?> callback(HttpServletRequest request, HttpSession session) throws Exception {
+    public String callback(HttpServletRequest request, HttpSession session) throws Exception {
         KakaoDTO kakaoInfo = kakaoService.getKakaoInfo(request.getParameter("code"));
         Long user_id = kakaoInfo.getId();
         session.setAttribute("user_id", user_id);
 
-        return ResponseEntity.ok().build();
+        return "index.html";
     }
 
     @GetMapping("/kakao/reset-session")

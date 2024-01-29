@@ -17,11 +17,6 @@ function Sidebar() {
             .catch(error => console.log(error));
     }, []);
 
-
-    const click = ()=>{
-        navigate("/login");
-    };
-
     return (
         <div className="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
             <ul className="list-group list-group-flush">
@@ -44,13 +39,12 @@ function Sidebar() {
                 <hr></hr>
                 {user_id === null && (
                     <li className="list-group-item">
-                        {/*<Link to={"/login"} className="icon-link">*/}
-                        {/*    <svg aria-hidden="true" className="bi">*/}
-                        {/*        <use xlinkHref="#door-open"></use>*/}
-                        {/*    </svg>*/}
-                        {/*    Login*/}
-                        {/*</Link>*/}
-                        <button onClick={click}>login</button>
+                        <Link to={"/login"} className="icon-link">
+                            <svg aria-hidden="true" className="bi">
+                                <use xlinkHref="#door-open"></use>
+                            </svg>
+                            Login
+                        </Link>
                     </li>
                 )}
                 {user_id !== null && (
